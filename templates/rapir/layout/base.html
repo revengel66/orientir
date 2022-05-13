@@ -1,0 +1,335 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="{% static 'rapir/images/favicon.png' %}"/>
+    <link href="{% static 'rapir/css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'rapir/slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'rapir/slick/slick-theme.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+</head>
+<body class="base-template">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(87443799, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/87443799" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<div class="menu-button hidden-md hidden-lg">
+        <span class="icon-menu-burger">
+            <span class="icon-menu-burger__line"></span>
+        </span>
+</div>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobmenu">
+    <div class="mobile-menu-inner">
+        <a href="{% url 'main' %}" class="logo-link">
+            <div class="logo">
+                <img alt="img" src="{% static 'rapir/images/logo.png' %}"/>
+            </div>
+        </a>
+        <ul>
+            <li>
+                <a href="{% url 'main' %}">Главная</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">О фонде</a>
+                <ul>
+                    <li>
+                        <a href="{% url 'expert' 1 %}">Президент фонда</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'structure' 'e' %}">Экспертный совет</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'structure' 's' %}">Наблюдательный совет</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+            	<a>Аналитика</a>
+                <ul>
+                    <li>
+                        <a href="{% url 'works' %}">Проекты</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'explorations' %}">Исследования</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+            	<a href="{% url 'smi' %}">Мы в СМИ</a>
+            </li>
+            <li>
+            	<a href="{% url 'news' %}">Новости</a>
+            </li>
+            <li>
+            	<a href="{% url 'galleries' %}">Галерея</a>
+            </li>
+            <li>
+            	<a href="{% url 'contact' %}">Контакты</a>
+            </li>
+        </ul>
+        <div class="adress-wrapper">
+            <div class="push25"></div>
+           
+        </div>
+
+        <div class="contacts-wrapper">
+            <div class="push25"></div>
+            <p class="adress"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Ульяновск, ул. Спасская, д. 19/9, офис 316</p>
+            <div class="push10"></div>
+            <a href="tel:+78422426629" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>8 (9656) 94-77-57</a>
+            <div class="push10"></div>
+            <a href="mailto:rapirfond@mail.ru" class="email"><i class="fa fa-envelope" aria-hidden="true"></i>rapirfond@mail.ru</a>
+            <div class="push10"></div>
+            <a href="http://rapirfond.online" class="old button" target="blank">Старая версия сайта</a>
+            <div class="push10"></div>
+             <div class="social">
+                <a href="#" class="fcb"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="vk"><i class="fa fa-vk"></i></a>
+                <a href="{% url 'rss' %}" class="rss"><i class="fa fa-rss"></i></a>
+            </div>
+            <a href="" class="callback button none">Заказать звонок</a>
+        </div>
+    </div>
+    <div class="push30"></div>
+</div>
+<div class="overlay"></div>
+<!-- /. Mobile menu -->
+
+
+<div class="main-wrapper">
+    <div class="header-wrapper">
+        <!--  for sm and xs-->
+        <div class="top-menu-wrap hidden-md hidden-lg">
+            <div class="container">
+                <nav class="top-menu">
+                    <div class="header-search">
+                        <form data-key="" action="{% url 'search' %}" method="get" id="">
+                            <input type="search" placeholder="Поиск по сайту" name="q" value="" />
+                            <input type="submit" name="searchform"/>
+                        </form>
+                    </div>
+                    <div class="adress-wrapper visible-sm visible-xs">
+            			<a href="tel:+78422426629" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>8 (9656) 94-77-57</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- /. for sm -->
+        <div class="header-top-menu-wrap hidden-xs">
+            <div class="container">
+                <div class="header-top-menu-inner">
+                    <div class="social">
+                        <a href="#" class="fcb"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="vk"><i class="fa fa-vk"></i></a>
+                        <a href="{% url 'rss' %}" class="rss"><i class="fa fa-rss"></i></a>
+                    </div>
+                    <a href="http://rapirfond.online" class="old button" target="blank">Старая версия сайта</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-middle-wrapper">
+            <div class="container">
+                <div class="header">
+                    <a href="{% url 'main'  %}" class="logo-link">
+                        <div class="logo">
+                            <img alt="img" src="{% static 'rapir/images/logo.png' %}"/>
+                        </div>
+                    </a>
+                    <div class="adress-wrapper hidden-sm hidden-xs">
+                        <div class="push25"></div>
+                    </div>
+
+                    <div class="contacts-wrapper">
+                        <div class="push15"></div>
+                        <p class="adress"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Ульяновск, ул. Спасская, д. 19/9, офис 316</p>
+            			<a href="tel:+78422426629" class="phone hidden-sm hidden-xs"> <i class="fa fa-phone" aria-hidden="true"></i> 8 (9656) 94-77-57</a>
+            			<a href="mailto:rapirfond@mail.ru" class="email"><i class="fa fa-envelope" aria-hidden="true"></i>rapirfond@mail.ru</a>
+                        <a href="" class="callback button none">Заказать звонок</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-menu-wrap hidden-sm hidden-xs">
+            <div class="container">
+                <nav class="top-menu">
+                    <ul>
+			            <li>
+			                <a href="{% url 'main' %}">Главная</a>
+			            </li>
+			            <li>
+			                <a href="{% url 'about' %}">О фонде</a>
+			                <ul>
+			                    <li>
+			                        <a href="{% url 'expert' 1 %}">Президент фонда</a>
+			                    </li>
+			                    <li>
+			                        <a href="{% url 'structure' 'e' %}">Экспертный совет</a>
+			                    </li>
+			                    <li>
+			                        <a href="{% url 'structure' 's' %}">Наблюдательный совет</a>
+			                    </li>
+			
+			                </ul>
+			            </li>
+			            <li>
+			            	<a>Аналитика</a>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'works' %}">Проекты</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'explorations' %}">Исследования</a>
+                                </li>
+                            </ul>
+			            </li>
+			            <li>
+			            	<a href="{% url 'smi' %}">Мы в СМИ</a>
+			            </li>
+			            <li>
+			            	<a href="{% url 'news' %}">Новости</a>
+			            </li>
+                         <li>
+                            <a href="{% url 'galleries' %}">Галерея</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'contact' %}">Контакты</a>
+                        </li>
+			        </ul>
+                    <div class="header-search">
+                        <form data-key="" action="{% url 'search' %}" method="get" id="">
+                            <input type="search" placeholder="Поиск по сайту" name="q" value="" />
+                            <input type="submit" name="searchform"/>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="middle-section">
+		{% block content %}{% endblock %}
+    </div>
+</div>
+<!-- Footer -->
+<div class="footer-wrapper">
+    <div class="container">
+        <div class="footer">
+            <div class="footer-element">
+                <a href="{% url 'main' %}" class="logo-link">
+                    <div class="logo">
+                         <img alt="img" src="{% static 'rapir/images/logo.png' %}"/>
+                    </div>
+                </a>
+            </div>
+            <div class="footer-element visible-lg visible-md">
+                <h5 class="none">Меню</h5>
+                <hr class="none">
+                <nav class="footer-menu">
+                    <ul>
+			            <li>
+			                <a href="{% url 'main' %}">Главная</a>
+			            </li>
+			            <li>
+			                <a href="{% url 'about' %}">О фонде</a>
+			                <ul>
+			                    <li>
+			                        <a href="{% url 'expert' 1 %}">Президент фонда</a>
+			                    </li>
+			                    <li>
+			                        <a href="{% url 'structure' 'e' %}">Экспертный совет</a>
+			                    </li>
+			                    <li>
+			                        <a href="{% url 'structure' 's' %}">Наблюдательный совет</a>
+			                    </li>
+			
+			                </ul>
+			            </li>
+			            <li>
+			            	<a class="none">Аналитика</a>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'works' %}">Проекты</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'explorations' %}">Исследования</a>
+                                </li>
+                            </ul>
+			            </li>
+			            <li>
+			            	<a href="{% url 'smi' %}">Мы в СМИ</a>
+			            </li>
+			            <li>
+			            	<a href="{% url 'news' %}">Новости</a>
+			            </li>
+                         <li>
+                            <a href="{% url 'galleries' %}">Галерея</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'contact' %}">Контакты</a>
+                        </li>
+    				 </ul>
+                </nav>
+            </div>
+            <div class="footer-element">
+                <h5 class="hidden-xs none">Контакты</h5>
+                <hr class="hidden-xs none">
+                <div class="contacts-wrapper">
+                    <p class="adress"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Ульяновск, ул. Спасская, д. 19/9, офис 316</p>
+            		<a href="tel:+78422426629" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> 8 (9656) 94-77-57</a>
+            		<a href="mailto:rapirfond@mail.ru" class="email"><i class="fa fa-envelope" aria-hidden="true"></i>rapirfond@mail.ru</a>
+                </div>
+            </div>
+            <div class="footer-element footer-end none">
+                <a href="" class="callback button none">Заказать звонок</a>
+                <p class="none">Остались вопросы? Закажите звонок и мы <br> позвонимв удобное для Вас время</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="footer-bottom-bar">
+    <div class="container">
+        <div class="footer-bottom-bar-inner">
+            <a href="{% url 'main' %}">Ульяновский общественный фонд "Региональная аналитика.<br> Профессиональные исследования. Рейтинги" <br> © РАПИР</a>
+            <div class="footer-bottom-bar-inner-end">
+	            <div>Сайт разработан <a href="https://telegram.me/revengel66">revengel</a> и <a href="https://telegram.me/acidmikk">acidmikk</a></div>
+	            <div class="push10"></div>
+	            <div class="social">
+	                <a href="#" class="fcb"><i class="fa fa-facebook"></i></a>
+	                <a href="#" class="vk"><i class="fa fa-vk"></i></a>
+                    <a href="{% url 'rss' %}" class="rss"><i class="fa fa-rss"></i></a>
+	            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /. Footer -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="{% static 'rapir/slick/slick.js' %}"  type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'rapir/slick/slick.min.js' %}"  type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'rapir/js/modernizr.js' %}" ></script>
+<script src="{% static 'rapir/js/scripts.js' %}" ></script>
+<script src="{% static 'rapir/js/jquery.fancybox.js' %}" ></script>
+<script src="{% static 'rapir/js/jquery.animateNumber.min.js' %}" ></script>
+<script src="{% static 'rapir/js/jquery.viewportchecker.js' %}" ></script>
+</body>
+</html>

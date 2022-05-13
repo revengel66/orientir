@@ -1,0 +1,33 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | Галерея{% endblock %}
+{% block content %}
+
+<section class="gallery-section">
+	<div class="container">
+		<div class="push50"></div>
+		<h1>Галерея</h1>
+		<div class="push20"></div>
+		<div class="gallery-wrapper">
+			{% for gallery in album_list %}
+            <a href="{{ gallery.get_absolute_url }}" class="gallery-item">
+				<div class="img-wrap">
+                    {% if gallery.image %}
+					    <img src="{{ gallery.image.url }}" alt="album">!--Изображение альбома-->
+                    {% else %}
+                        <img src="{% static 'rapir/images/empty.png' %}" alt="album">
+                    {% endif %}
+				</div>
+				<div class="title-wrap">
+					{{ gallery.title }} <!--Название альбома-->
+				</div>
+			</a>
+			{% endfor %}
+		</div>
+        {% include 'rapir/pagination.html' %}
+		<div class="push50"></div>
+	</div>
+</section>
+
+{% endblock %}
+

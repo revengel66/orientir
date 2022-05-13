@@ -1,0 +1,164 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | О фонде{% endblock %}
+{% block content %}
+<div class="text-header-about">
+    <div class="container">
+        <h1>О фонде</h1>
+    </div>
+</div>
+<div class="push30"></div>
+{% if about.content1 %}
+    <section class="about-part about-part-one"  style="background-image: url({{ about.image1.url }});"> <!--Хз, как прописывать путь до картинок в атриботу стилей, но оставлю пока так-->
+        <div class="container">
+            <div class="about-part-inner">
+                <div class="content">
+                    {{ about.content1 | safe }} <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга-->
+                </div>
+                <div class="about-image">
+                    <img src="{{ about.image1.url }}" alt=""> <!--Картинка для первой секции страницы-->
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% if about.content2 %}
+    <section class="about-part-two">
+        <div class="push40 hidden-sm hidden-xs"></div>
+        <div class="container">
+            <div class="about-part-inner">
+                <div class="about-image-wrapper">
+                    <div class="about-image">
+                        <img src="{{ about.image2_1.url }}" alt="">  <!--Картинка на заднем плане для второй секции страницы-->
+                    </div>
+                    <div class="about-image">
+                        <img src="{{ about.image2_2.url }}" alt=""> <!--Картинка на переднем плане для второй секции страницы-->
+                    </div>
+                </div>
+                <div class="content">
+                    {{ about.content2 | safe }}   <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга-->
+                </div>
+            </div>
+        </div>
+        <div class="push40 hidden-sm hidden-xs"></div>
+    </section>
+{% endif %}
+    {% if about.content3 %}
+        <section class="about-part about-part-three" style="background-image: url({{ about.image3.url }});"><!--Картинка для третьей секции страницы-->
+            <div class="push40 hidden-sm hidden-xs"></div>
+            <div class="container">
+                <div class="about-part-inner">
+                    <div class="content">
+                        {{ about.content3 | safe }}   <!--цк едитор тут для того, чтобы можно было ентерами отделять куски текста друг от друга-->
+                    </div>
+                    <div class="about-image">
+                        <img src="{{ about.image3.url }}" alt=""> <!--Картинка для третьей секции страницы-->
+                    </div>
+                </div>
+            </div>
+            <div class="push40 hidden-sm hidden-xs"></div>
+    </section>
+{% endif %}
+{% if about.history  %}
+    <section class="history-section">
+        <div class="push50"></div>
+        <div class="container">
+            <div class="history-wrapper">
+                <div class="text-header">
+                    <h2>История фонда</h2>
+                    <div class="push30"></div>
+                </div>
+                <div class="histoty-inner">
+                    {{ about.history | safe }}
+                </div>
+            </div>
+        </div>
+        <div class="push50"></div>
+    </section>
+{% endif %}
+<section class="num-section">
+    <div class="text-header">
+    	<div class="push50"></div>
+    	<h2>О нашем фонде в цифрах</h2>
+    	<div class="push50"></div>
+    </div>
+    <div class="num-inner">
+        <div class="num-item">
+            <div class="element">
+            	<div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon1.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	проектов было<br>реализовано нашим<br>фондом
+                </div>
+                <div class="num num1"><span id="num1">0</span> </div>
+            </div>
+        </div>
+        <div class="num-item">
+            <div class="element">
+                <div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon2.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	человек принимают<br>участие в деятельности<br>РАПИР
+                </div>
+                <div class="num num2"><span id="num2">0</span> </div>
+            </div>
+        </div>
+        <div class="num-item">
+            <div class="element">
+                <div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon3.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	лет мы уже<br>осуществляем свою<br>работу
+                </div>
+                <div class="num num3"><span id="num3">0</span> </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="participant-section">
+	<div class="push50"></div>
+		<div class="participant-wrapper">
+			<div class="text-header">
+				<h2>Экспертый совет</h2>
+				<div class="push30"></div>
+			</div>
+		    <div class="subtitle">
+				<p>
+					Экспертный совет УОФ «РАПИР» — уникальная межвузовская научная площадка, объединяющая 29 учёных-гуманитариев пяти крупнейших ВУЗов Ульяновской области. Среди них 8 докторов, 21 кандидат наук по следующим научным специальностям: политология, социология, экономика, психология, история, педагогика, юриспруденция.
+				</p>
+			</div>
+			<div class="push30"></div>
+			<div class="participant-slider">
+
+                {% for expert in experts %}
+                    <div class="experts-item">
+                        <div class="expert-inner">
+                            <a href="{% url 'expert' expert.id %}" class="link-block"></a>
+                            <div class="image-wrapper">
+                                {% if expert.avatar %}
+                                    <img src="{{ expert.avatar.url }}" alt="expert"/>
+                                {% else %}
+                                    <img src="{% static 'rapir/images/empty.png' %}" alt="expert">
+                                {% endif %}
+                            </div>
+                            <div class="experts-text">
+                                <div class="title-wrapper">
+                                    {{ expert.name }}
+                                </div>
+                                <div class="push10"></div>
+                                <div class="description-wrapper">
+                                    {{ expert.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+				
+			</div>
+		</div>
+	<div class="push70"></div>
+</section>
+{% endblock %}

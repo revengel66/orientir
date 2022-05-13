@@ -1,0 +1,38 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | {{ title }}{% endblock %}
+{% block content %}
+        <section class="experts-wrapper">
+            <div class="push50"></div>
+            <div class="container">
+                <h1>{{ title }}</h1>
+                <div class="push30"></div>
+                <div class="experts-inner">
+                    {% for expert in experts %}
+                    <div class="experts-item">
+                        <div class="expert-inner">
+                            <a href={{ expert.get_absolute_url }} class="link-block"></a>
+                            <div class="image-wrapper">
+                                {% if expert.avatar %}
+                                    <img src="{{ expert.avatar.url }}" alt="expert"/>
+                                {% else %}
+                                    <img src="{% static 'rapir/images/empty.png' %}" alt="expert">
+                                {% endif %}
+                            </div>
+                            <div class="experts-text">
+                                <div class="title-wrapper">
+                                    {{ expert.title }}
+                                </div>
+                                <div class="push10"></div>
+                                <div class="description-wrapper">
+                                    {{ expert.content }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </section>
+        <div class="push50"></div>
+{% endblock %}

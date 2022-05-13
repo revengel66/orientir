@@ -1,0 +1,46 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | Новости{% endblock %}
+{% block content %}
+
+<section class="news-section">
+	<div class="container">
+		<div class="push50"></div>
+		<h1>Новости</h1>
+		<div class="push20"></div>
+		<div class="news-wrapper">
+			{% for new in news_list %}
+			<div class="news-item">
+				<a class="link-block" href="{{ new.get_absolute_url }}"></a>
+				<div class="news-img-wrap">
+                    {% if new.image %}
+					    <img src="{{ new.image.url }}" alt="new">
+                    {% else %}
+                        <img src="{% static 'rapir/images/empty-news.jpg' %}" alt="new">
+                    {% endif %}
+				</div>
+				<div class="news-text">
+					<div class="news-text-inner">
+						<div class="news-date">
+							<i class="fa fa-calendar-o" aria-hidden="true"></i>
+							{{ new.published|date:"d.m.Y" }}
+						</div>
+						<div class="news-title">
+							{{ new.title }}
+						</div>
+						<div class="news-annotation">
+							{{ new.mini_content }}
+						</div>
+					</div>
+					<a class="" href="{% url 'new' new.slug %}">Читать далее <span>>></span></a>
+				</div>
+			</div> 
+			{% endfor %}
+		</div>
+        {% include 'rapir/pagination.html' %}
+		<div class="push50"></div>
+	</div>
+</section>
+
+{% endblock %}
+

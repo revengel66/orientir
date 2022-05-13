@@ -1,0 +1,280 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | Главная{% endblock %}
+{% block content %}
+<!--------------------------------------------------------------Slider begin-------------------------------------------------------------->
+<section class="header-slider">
+	{% for slide in slider %}
+		<div class="element-slider">
+			<div class="element-slider-inner">
+				<div class="element-slider-img">
+					<img src="{{ slide.image.url }}"/>
+				</div>
+				<div class="element-slider-text">
+					<div class="container">
+						<div class="slider-text">
+							<div class="slider-title-inner">
+								{{ slide.title }}
+							</div>
+							<div class="slider-text-inner">
+								{{ slide.content }}
+							</div>
+							<div class="push20"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor%}
+</section>
+<!--------------------------------------------------------------Slider end-------------------------------------------------------------->
+<!--------------------------------------------------------------Project begin-------------------------------------------------------------->
+<section class="project-section">
+	<div class="push90"></div>
+	<div class="container">
+		<div class="project-wrapper">
+			<div class="back-design-image">
+				<img src="{% static 'rapir/images/project-design-img.png' %}" alt="">
+			</div>
+			<div class="content">
+				<div class="header-title">
+					<h2>Проекты</h2>
+					<div class="push25"></div>
+				</div>
+				<div class="subtitle">
+					<p>
+						С момента создания УОФ «РАПИР» выступил организатором большого количества исследований, предметом которых являются различные социогуманитарные проблемы Ульяновской области. Результаты исследований ежегодно обобщаются в форме сборников научных трудов.
+					</p>
+				</div>
+				<div class="section-item-wrapper">
+					<!--=======================Project item begin (2 item for preview)=======================-->
+					{% for project in projects %}
+                        <a href="{{ project.get_absolute_url }}" class="section-item">
+                        <div class="image-wrap">
+                            <img src="{% static 'rapir/images/proj-item.png' %}" alt="">
+                            <div class="number">
+                                {{ project.id }}
+                            </div>
+                        </div>
+                        <div class="title-wrap">
+                            <div>{{ project.title }}</div>
+                            <div>{{ project.subtitle }}</div>
+                        </div>
+                    </a>
+                    {% endfor %}
+					<!--=======================Project item end=======================-->
+				</div>
+				<a class="button" href="{% url 'works' %}">Смотреть все</a>
+			</div>
+		</div>
+	</div>
+	<div class="push90"></div>
+</section>
+<!--------------------------------------------------------------Project item end-------------------------------------------------------------->
+<!--------------------------------------------------------------About begin-------------------------------------------------------------->
+<section class="about-section">
+	<div class="push90"></div>
+	<div class="container">
+		<div class="about-wrapper-section">
+			<div class="content">
+				<div class="header-title">
+					<h2>О фонде</h2>
+					<div class="push40 visible-lg visible-md"></div>
+					<div class="push10 hidden-lg hidden-md"></div>
+					<hr class=" hidden-lg hidden-md">
+					<div class="push10 hidden-lg hidden-md"></div>
+				</div>
+				<div class="subtitle">
+					<p>
+                        
+                    </p>
+				</div>
+				<a class="button" href="{% url 'about' %}">Подробнее</a>
+			</div>
+			<div class="content-image visible-lg visible-md">
+				<img src="{% static 'rapir/images/president.png' %}" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="push90"></div>
+</section>
+<!--------------------------------------------------------------About end-------------------------------------------------------------->
+<!--------------------------------------------------------------Searches begin-------------------------------------------------------------->
+<section class="events-section">
+	<div class="push90"></div>
+	<div class="container">
+		<div class="events-wrapper">
+			<div class="back-design-image">
+				<img src="{% static 'rapir/images/events-design-img.png' %}" alt="">
+			</div>
+			<div class="content">
+				<div class="header-title">
+					<h2>Исследования</h2>
+					<div class="push25"></div>
+				</div>
+				<div class="subtitle">
+					<p>
+						Приоритетным направлением деятельности УОФ «РАПИР» является проведение социально-политических и электоральных исследований.  С 2018 года Фонд обеспечивает социологическое сопровождение избирательных кампаний, проводимых на территории Ульяновской области. 
+					</p>
+				</div>
+				<div class="section-item-wrapper">
+					<!--=======================Searches item begin (2 item for preview)=======================-->
+					{% for search in searches %}
+                        <a href="{{ search.get_absolute_url }}" class="section-item">
+                            <div class="image-wrap">
+                                {% if search.image %}
+                                    <img src="{{ search.image.url }}" alt="">
+                                {% else %}
+                                    <img src="{% static 'rapir/images/empty.png' %}" alt="new">
+                                {% endif %}
+                            </div>
+                            <div class="title-wrap">
+                                {{ search.title }}
+                            </div>
+                        </a>
+                    {% endfor %}
+					<!--=======================Searches item end=======================-->
+				</div>
+				<a class="button" href="{% url 'explorations' %}">Смотреть все</a>
+			</div>
+		</div>
+	</div>
+	<div class="push90"></div>
+</section>
+<!--------------------------------------------------------------Searches end-------------------------------------------------------------->
+<!--------------------------------------------------------------Num begin-------------------------------------------------------------->
+<section class="num-section">
+    <div class="text-header">
+    	<div class="push50"></div>
+    	<h2>О нашем фонде в цифрах</h2>
+    	<div class="push50"></div>
+    </div>
+    <div class="num-inner">
+		<!--Num item begin-->
+        <div class="num-item">
+            <div class="element">
+            	<div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon1.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	проектов было<br>реализовано нашим<br>фондом
+                </div>
+                <div class="num num1"><span id="num1">0</span> </div>
+            </div>
+        </div>
+		<!--Num item end-->
+		<!--Num item begin-->
+        <div class="num-item">
+            <div class="element">
+                <div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon2.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	человек принимают<br>участие в деятельности<br>РАПИР
+                </div>
+                <div class="num num2"><span id="num2">0</span> </div>
+            </div>
+        </div>
+		<!--Num item end-->
+		<!--Num item begin-->
+        <div class="num-item">
+            <div class="element">
+                <div class="img-wrap">
+            		<img src="{% static 'rapir/images/icons/icon3.png' %}" alt="">
+            	</div>
+                <div class="title-wrap">
+                	лет мы уже<br>осуществляем свою<br>работу
+                </div>
+                <div class="num num3"><span id="num3">0</span> </div>
+            </div>
+        </div>
+		<!--Num item end-->
+    </div>
+</section>
+<!--------------------------------------------------------------Num end-------------------------------------------------------------->
+<!--------------------------------------------------------------Participants begin-------------------------------------------------------------->
+<section class="participant-section">
+	<div class="push50"></div>
+		<div class="participant-wrapper">
+			<div class="text-header">
+				<h2>Экспертый совет</h2>
+				<div class="push30"></div>
+			</div>
+		    <div class="subtitle">
+				<p>
+					Экспертный совет УОФ «РАПИР» — уникальная межвузовская научная площадка, объединяющая 29 учёных-гуманитариев пяти крупнейших ВУЗов Ульяновской области. Среди них 8 докторов, 21 кандидат наук по следующим научным специальностям: политология, социология, экономика, психология, история, педагогика, юриспруденция.
+				</p>
+			</div>
+			<div class="push30"></div>
+			<div class="participant-slider">
+				<!--=======================Participants item begin=======================-->
+				{% for expert in experts %}
+                    <div class="experts-item">
+                        <div class="expert-inner">
+                            <a href="{% url 'expert' expert.id %}" class="link-block"></a>
+                            <div class="image-wrapper">
+                                {% if expert.avatar %}
+                                    <img src="{{ expert.avatar.url }}" alt="expert"/>
+                                {% else %}
+                                    <img src="{% static 'rapir/images/empty.png' %}" alt="expert">
+                                {% endif %}
+                            </div>
+                            <div class="experts-text">
+                                <div class="title-wrapper">
+                                    {{ expert.name }}
+                                </div>
+                                <div class="push10"></div>
+                                <div class="description-wrapper">
+                                    {{ expert.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+				<!--=======================Participants item end=======================-->
+			</div>
+		</div>
+	<div class="push70"></div>
+</section>
+<!--------------------------------------------------------------Participants end-------------------------------------------------------------->
+<!--------------------------------------------------------------News begin-------------------------------------------------------------->
+<section class="news-section">
+	<div class="container">
+		<div class="push50"></div>
+		<h2>Новости</h2>
+		<div class="push20"></div>
+		<div class="news-wrapper">
+			{% for new in last_news %}
+			<div class="news-item">
+				<a class="link-block" href="{% url 'new' new.slug %}"></a>
+				<div class="news-img-wrap">
+                    {% if new.image %}
+					    <img src="{{ new.image.url }}" alt="new">
+                    {% else %}
+                        <img src="{% static 'rapir/images/empty-news.jpg' %}" alt="new">
+                    {% endif %}
+				</div>
+				<div class="news-text">
+					<div class="news-text-inner">
+						<div class="news-date">
+							<i class="fa fa-calendar-o" aria-hidden="true"></i>
+							{{ new.published|date:"d.m.Y" }}
+						</div>
+						<div class="news-title">
+							{{ new.title }}
+						</div>
+						<div class="news-annotation">
+							{{ new.mini_content }}
+						</div>
+					</div>
+					<a class="" href="{% url 'new' new.slug %}">Читать далее <span>>></span></a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="push50"></div>
+	</div>
+</section>
+<!--------------------------------------------------------------News end-------------------------------------------------------------->
+
+{% endblock %}

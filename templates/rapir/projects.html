@@ -1,0 +1,33 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | Проекты{% endblock %}
+{% block content %}
+
+<section class="projects-section">
+	<div class="container">
+		<div class="push50"></div>
+		<h1>Проекты</h1>
+		<div class="push50"></div>
+		<div class="projects-wrapper section-item-wrapper">
+			{% for project in works_list %}
+                <a href="{{ project.get_absolute_url }}" class="section-item">
+                <div class="image-wrap">
+                    <img src="{% static 'rapir/images/proj-item.png' %}" alt="">
+                    <div class="number">
+                        {{ project.id }}
+                    </div>
+                </div>
+                <div class="title-wrap">
+                    <div>{{ project.title }}</div>
+                    <div>{{ project.subtitle }}</div>
+                </div>
+            </a>
+            {% endfor %}
+		</div>
+        {% include 'rapir/pagination.html' %}
+		<div class="push50"></div>
+	</div>
+</section>
+
+{% endblock %}
+

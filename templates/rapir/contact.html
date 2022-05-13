@@ -1,0 +1,63 @@
+{% extends "rapir/layout/base.html" %}
+{% load static %}
+{% block title %}РАПИР | Главная{% endblock %}
+{% block content %}
+<section class="experts-wrapper">
+  <div class="push50"></div>
+  <div class="container">
+      <section class="contacts-section">
+        <div class="contacts-inner">
+			<!--Contacts item begin-->
+			<div class="contacts-item contacts-item-first">
+				<div class="contacts-inner-item">
+					<h1>Контакты</h1>
+					<div class="push20"></div>
+					<div class="contacts-wrapper">
+						<div class="adress"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Ульяновск, ул. Спасская, д. 19/9, офис 316</div>
+						<div class="push10"></div>
+						<a href="tel:+78422426629" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>8 (9656) 94-77-57</a>
+						<div class="push10"></div>
+						<a href="mailto:rapirfond@mail.ru" class="email"><i class="fa fa-envelope" aria-hidden="true"></i>rapirfond@mail.ru</a>
+						<div class="push15"></div>
+						<div class="social">
+							<a href="#" class="fcb"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="vk"><i class="fa fa-vk"></i></a>
+							<a href="#" class="rss"><i class="fa fa-rss"></i></a>
+						</div>
+						<div class="push30"></div>
+					</div>
+				</div>
+				<div class="map-contact contacts-inner-item">
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A27ba58121d64e8f863237c0206fb293e58ba63df3720fd2aed35964358853ca3&amp;width=100%25&amp;height=250&amp;lang=ru_RU&amp;scroll=true"></script>
+				</div>
+          </div>
+          <!--Contacts item end-->
+          <!--Contacts item begin-->
+          <div class="contacts-item contacts-item-form">
+            <div class="form-header">Для вопросов и предложений</div>
+            <form method="post" class="form-contact form">
+              {% csrf_token %}
+                  <div class="form-body">
+                      <div class="form-group">
+                          <input name="name" placeholder="Ваше имя*" type="text" class="text" required />
+                      </div>
+                      <div class="form-group">
+                          <input name="email" placeholder="Ваш Email*" type="email" class="text" required/>
+                      </div>
+                      <div class="form-group">
+                        <textarea name="mess" placeholder="Введите сообщение..."></textarea>
+                      </div>
+                  </div>
+                  <div class="form-actions form-group ">
+                      <button type="submit" class="form-control btn btn-success button button-form" name="sendform">Отправить</button>
+                  </div>
+            </form>
+          </div>
+          <!--Contacts item end-->
+          
+        </div>
+      </section>
+      <div class="push100"></div>
+  </div>
+</section>
+{% endblock %}
