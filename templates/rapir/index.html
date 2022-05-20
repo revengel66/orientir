@@ -3,31 +3,85 @@
 {% block title %}РАПИР | Главная{% endblock %}
 {% block content %}
 <!--------------------------------------------------------------Slider begin-------------------------------------------------------------->
-<section class="header-slider">
-	{% for slide in slider %}
-		<div class="element-slider">
-			<div class="element-slider-inner">
-				<div class="element-slider-img">
-					<img src="{{ slide.image.url }}"/>
+<section class="header-slider-wrapper">
+	<div class="container">
+		<div class="header-img-wrap">
+			{% for slide in slider %}
+			<!--div class="header-img" style="background-image: url({{slide.image.url}});">
+				<div class="header-img-inner">
+					<h2>
+						{{ slide.title }}
+					</h2>
+					<div class="describtion">
+						{{ slide.content }}
+					</div>
+					<div class="button-wrapper">
+						<a href="#feedconsul" class="button">Бесплатная консультация</a>
+					</div>
 				</div>
-				<div class="element-slider-text">
-					<div class="container">
-						<div class="slider-text">
-							<div class="slider-title-inner">
-								{{ slide.title }}
-							</div>
-							<div class="slider-text-inner">
-								{{ slide.content }}
-							</div>
-							<div class="push20"></div>
-						</div>
+			</div-->
+			{% endfor%}
+			<div class="header-img" style="background-image: url({% static 'rapir/images/image-header.jpg' %});">
+				<div class="header-img-inner">
+					<h2>
+						Развиваем компании масштабируя бизнес
+					</h2>
+					<div class="describtion">
+						Мы свяжемся, чтобы вывести ваш бизнес на новую ступень развития.
+					</div>
+					<div class="button-wrapper">
+						<a href="#feedconsul" class="button">Бесплатная консультация</a>
+					</div>
+				</div>
+			</div>
+			<div class="header-img" style="background-image: url({% static 'rapir/images/image-header.jpg' %});">
+				<div class="header-img-inner">
+					<h2>
+						Развиваем компании масштабируя бизнес
+					</h2>
+					<div class="describtion">
+						Мы свяжемся, чтобы вывести ваш бизнес на новую ступень развития.
+					</div>
+					<div class="button-wrapper">
+						<a href="#feedconsul" class="button">Бесплатная консультация</a>
 					</div>
 				</div>
 			</div>
 		</div>
-	{% endfor%}
+	</div>
+	<div class="push70"></div>
 </section>
+
 <!--------------------------------------------------------------Slider end-------------------------------------------------------------->
+
+<!--------------------------------------------------------------About begin-------------------------------------------------------------->
+<section class="about-section">
+	<div class="push90"></div>
+	<div class="container">
+		<div class="about-wrapper-section">
+			<div class="content">
+				<div class="header-title">
+					<h2>Об организации</h2>
+					<div class="push40 visible-lg visible-md"></div>
+					<div class="push10 hidden-lg hidden-md"></div>
+					<hr class=" hidden-lg hidden-md">
+					<div class="push10 hidden-lg hidden-md"></div>
+				</div>
+				<div class="subtitle">
+					<p>
+                        Предварительные выводы неутешительны: синтетическое тестирование создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса поэтапного и последовательного развития общества. 
+                    </p>
+				</div>
+				<a class="button" href="{% url 'about' %}">Подробнее</a>
+			</div>
+			<div class="content-image visible-lg visible-md">
+				<img src="{% static 'rapir/images/president.png' %}" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="push90"></div>
+</section>
+<!--------------------------------------------------------------About end-------------------------------------------------------------->
 <!--------------------------------------------------------------Project begin-------------------------------------------------------------->
 <section class="project-section">
 	<div class="push90"></div>
@@ -71,77 +125,7 @@
 	<div class="push90"></div>
 </section>
 <!--------------------------------------------------------------Project item end-------------------------------------------------------------->
-<!--------------------------------------------------------------About begin-------------------------------------------------------------->
-<section class="about-section">
-	<div class="push90"></div>
-	<div class="container">
-		<div class="about-wrapper-section">
-			<div class="content">
-				<div class="header-title">
-					<h2>О фонде</h2>
-					<div class="push40 visible-lg visible-md"></div>
-					<div class="push10 hidden-lg hidden-md"></div>
-					<hr class=" hidden-lg hidden-md">
-					<div class="push10 hidden-lg hidden-md"></div>
-				</div>
-				<div class="subtitle">
-					<p>
-                        
-                    </p>
-				</div>
-				<a class="button" href="{% url 'about' %}">Подробнее</a>
-			</div>
-			<div class="content-image visible-lg visible-md">
-				<img src="{% static 'rapir/images/president.png' %}" alt="">
-			</div>
-		</div>
-	</div>
-	<div class="push90"></div>
-</section>
-<!--------------------------------------------------------------About end-------------------------------------------------------------->
-<!--------------------------------------------------------------Searches begin-------------------------------------------------------------->
-<section class="events-section">
-	<div class="push90"></div>
-	<div class="container">
-		<div class="events-wrapper">
-			<div class="back-design-image">
-				<img src="{% static 'rapir/images/events-design-img.png' %}" alt="">
-			</div>
-			<div class="content">
-				<div class="header-title">
-					<h2>Исследования</h2>
-					<div class="push25"></div>
-				</div>
-				<div class="subtitle">
-					<p>
-						Приоритетным направлением деятельности УОФ «РАПИР» является проведение социально-политических и электоральных исследований.  С 2018 года Фонд обеспечивает социологическое сопровождение избирательных кампаний, проводимых на территории Ульяновской области. 
-					</p>
-				</div>
-				<div class="section-item-wrapper">
-					<!--=======================Searches item begin (2 item for preview)=======================-->
-					{% for search in searches %}
-                        <a href="{{ search.get_absolute_url }}" class="section-item">
-                            <div class="image-wrap">
-                                {% if search.image %}
-                                    <img src="{{ search.image.url }}" alt="">
-                                {% else %}
-                                    <img src="{% static 'rapir/images/empty.png' %}" alt="new">
-                                {% endif %}
-                            </div>
-                            <div class="title-wrap">
-                                {{ search.title }}
-                            </div>
-                        </a>
-                    {% endfor %}
-					<!--=======================Searches item end=======================-->
-				</div>
-				<a class="button" href="{% url 'explorations' %}">Смотреть все</a>
-			</div>
-		</div>
-	</div>
-	<div class="push90"></div>
-</section>
-<!--------------------------------------------------------------Searches end-------------------------------------------------------------->
+
 <!--------------------------------------------------------------Num begin-------------------------------------------------------------->
 <section class="num-section">
     <div class="text-header">

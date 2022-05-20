@@ -11,38 +11,31 @@
     <link href="{% static 'rapir/css/style.css' %}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'rapir/slick/slick.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'rapir/slick/slick-theme.css' %}"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="base-template">
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(87443799, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/87443799" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 <div class="menu-button hidden-md hidden-lg">
         <span class="icon-menu-burger">
             <span class="icon-menu-burger__line"></span>
         </span>
 </div>
 
+
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobmenu">
-    <div class="mobile-menu-inner">
-        <a href="{% url 'main' %}" class="logo-link">
-            <div class="logo">
-                <img alt="img" src="{% static 'rapir/images/logo.png' %}"/>
-            </div>
+    <div class="logo-wrap">
+        <a href="{% url 'main' %}" class="logo-img-wrap">
+            <img alt="img" src="{% static 'rapir/images/logo.webp' %}"/>
         </a>
+        <div class="name-company">
+            <span>Центр Ориентир</span><br>
+            Soft-skills
+        </div>
+    </div>
+    <div class="mobile-menu-inner">
         <ul>
             <li>
                 <a href="{% url 'main' %}">Главная</a>
@@ -86,30 +79,26 @@
             	<a href="{% url 'contact' %}">Контакты</a>
             </li>
         </ul>
-        <div class="adress-wrapper">
-            <div class="push25"></div>
-           
-        </div>
-
-        <div class="contacts-wrapper">
-            <div class="push25"></div>
-            <p class="adress"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Ульяновск, ул. Спасская, д. 19/9, офис 316</p>
-            <div class="push10"></div>
-            <a href="tel:+78422426629" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>8 (9656) 94-77-57</a>
-            <div class="push10"></div>
-            <a href="mailto:rapirfond@mail.ru" class="email"><i class="fa fa-envelope" aria-hidden="true"></i>rapirfond@mail.ru</a>
-            <div class="push10"></div>
-            <a href="http://rapirfond.online" class="old button" target="blank">Старая версия сайта</a>
-            <div class="push10"></div>
-             <div class="social">
-                <a href="#" class="fcb"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="vk"><i class="fa fa-vk"></i></a>
-                <a href="{% url 'rss' %}" class="rss"><i class="fa fa-rss"></i></a>
-            </div>
-            <a href="" class="callback button none">Заказать звонок</a>
-        </div>
     </div>
     <div class="push30"></div>
+    <div class="mobile-contacts">
+        <div class="header-adress ">
+            <?xml version="1.0" ?><svg enable-background="new 0 0 64 64" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Glyph_copy_2"><path d="M42.138,23.162c0-5.566-4.548-10.094-10.138-10.094s-10.138,4.528-10.138,10.094S26.41,33.256,32,33.256   S42.138,28.728,42.138,23.162z"/><path d="M31.995,63.996l4.109-5.375c4.289-5.678,18.282-25.024,18.282-35.601C54.387,9.253,45.391,0.004,32,0.004   S9.613,9.253,9.613,23.021c0,11.39,16.432,33.166,18.301,35.605L31.995,63.996z M17.862,23.162c0-7.771,6.342-14.094,14.138-14.094   s14.138,6.323,14.138,14.094S39.796,37.256,32,37.256S17.862,30.934,17.862,23.162z"/></g></svg>
+            <div class="contacts-wrap">
+                <span>г. Москва</span>
+                Ленинский проспект, дом, строение, номер кабинета
+            </div>
+        </div>
+        <div class="push30"></div>
+        <div class="header-phone">
+            <?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="477.156px" height="477.156px" viewBox="0 0 477.156 477.156" style="enable-background:new 0 0 477.156 477.156;"xml:space="preserve"><g><path d="M475.009,380.316l-2.375-7.156c-5.625-16.719-24.062-34.156-41-38.75l-62.688-17.125c-17-4.625-41.25,1.594-53.688,14.031l-22.688,22.688c-82.453-22.28-147.109-86.938-169.359-169.375L145.9,161.94c12.438-12.438,18.656-36.656,14.031-53.656l-17.094-62.719c-4.625-16.969-22.094-35.406-38.781-40.969L96.9,2.19c-16.719-5.563-40.563,0.063-53,12.5L9.962,48.659C3.899,54.69,0.024,71.94,0.024,72.003c-1.187,107.75,41.063,211.562,117.281,287.781c76.031,76.031,179.454,118.219,286.891,117.313c0.562,0,18.312-3.813,24.375-9.845l33.938-33.938C474.946,420.878,480.571,397.035,475.009,380.316z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+            <div class="phone-wrap">
+                <span><a class="phone" href="tel:+70000000000">+7 (000) 000-00-00</a></span><br>
+                Звоните с 09:00 до 22:00  (Бесплатно по России)
+            </div>
+        </div>
+    </div>
+    <div class="push50"></div>
 </div>
 <div class="overlay"></div>
 <!-- /. Mobile menu -->
@@ -117,82 +106,29 @@
 
 <div class="main-wrapper">
     <div class="header-wrapper">
-        <!--  for sm and xs-->
-        <div class="top-menu-wrap hidden-md hidden-lg">
-            <div class="container">
-                <nav class="top-menu">
-                    <div class="header-search">
-                        <form data-key="" action="{% url 'search' %}" method="get" id="">
-                            <input type="search" placeholder="Поиск по сайту" name="q" value="" />
-                            <input type="submit" name="searchform"/>
-                        </form>
-                    </div>
-                    <div class="adress-wrapper visible-sm visible-xs">
-            			<a href="tel:+78422426629" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>8 (9656) 94-77-57</a>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!-- /. for sm -->
-        <div class="header-top-menu-wrap hidden-xs">
-            <div class="container">
-                <div class="header-top-menu-inner">
-                    <div class="social">
-                        <a href="#" class="fcb"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="vk"><i class="fa fa-vk"></i></a>
-                        <a href="{% url 'rss' %}" class="rss"><i class="fa fa-rss"></i></a>
-                    </div>
-                    <a href="http://rapirfond.online" class="old button" target="blank">Старая версия сайта</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="header-middle-wrapper">
-            <div class="container">
-                <div class="header">
-                    <a href="{% url 'main'  %}" class="logo-link">
-                        <div class="logo">
-                            <img alt="img" src="{% static 'rapir/images/logo.png' %}"/>
-                        </div>
-                    </a>
-                    <div class="adress-wrapper hidden-sm hidden-xs">
-                        <div class="push25"></div>
-                    </div>
-
-                    <div class="contacts-wrapper">
-                        <div class="push15"></div>
-                        <p class="adress"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Ульяновск, ул. Спасская, д. 19/9, офис 316</p>
-            			<a href="tel:+78422426629" class="phone hidden-sm hidden-xs"> <i class="fa fa-phone" aria-hidden="true"></i> 8 (9656) 94-77-57</a>
-            			<a href="mailto:rapirfond@mail.ru" class="email"><i class="fa fa-envelope" aria-hidden="true"></i>rapirfond@mail.ru</a>
-                        <a href="" class="callback button none">Заказать звонок</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="top-menu-wrap hidden-sm hidden-xs">
-            <div class="container">
-                <nav class="top-menu">
+        <div class="container">
+            <div class="header">
+                <nav class="top-menu visible-lg visible-md">
                     <ul>
-			            <li>
-			                <a href="{% url 'main' %}">Главная</a>
-			            </li>
-			            <li>
-			                <a href="{% url 'about' %}">О фонде</a>
-			                <ul>
-			                    <li>
-			                        <a href="{% url 'expert' 1 %}">Президент фонда</a>
-			                    </li>
-			                    <li>
-			                        <a href="{% url 'structure' 'e' %}">Экспертный совет</a>
-			                    </li>
-			                    <li>
-			                        <a href="{% url 'structure' 's' %}">Наблюдательный совет</a>
-			                    </li>
-			
-			                </ul>
-			            </li>
-			            <li>
-			            	<a>Аналитика</a>
+                        <li>
+                            <a href="{% url 'main' %}">Главная</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about' %}">О фонде</a>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'expert' 1 %}">Президент фонда</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'structure' 'e' %}">Экспертный совет</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'structure' 's' %}">Наблюдательный совет</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Аналитика</a>
                             <ul>
                                 <li>
                                     <a href="{% url 'works' %}">Проекты</a>
@@ -201,30 +137,75 @@
                                     <a href="{% url 'explorations' %}">Исследования</a>
                                 </li>
                             </ul>
-			            </li>
-			            <li>
-			            	<a href="{% url 'smi' %}">Мы в СМИ</a>
-			            </li>
-			            <li>
-			            	<a href="{% url 'news' %}">Новости</a>
-			            </li>
-                         <li>
+                        </li>
+                        <li>
+                            <a href="{% url 'smi' %}">Мы в СМИ</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'news' %}">Новости</a>
+                        </li>
+                            <li>
                             <a href="{% url 'galleries' %}">Галерея</a>
                         </li>
                         <li>
                             <a href="{% url 'contact' %}">Контакты</a>
                         </li>
-			        </ul>
-                    <div class="header-search">
+                    </ul>
+                    <div class="header-search none">
                         <form data-key="" action="{% url 'search' %}" method="get" id="">
                             <input type="search" placeholder="Поиск по сайту" name="q" value="" />
                             <input type="submit" name="searchform"/>
                         </form>
                     </div>
                 </nav>
+                <a href="#feedback" class="header-feed">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="485.211px" height="485.211px" viewBox="0 0 485.211 485.211" style="enable-background:#FF5168;"
+                    xml:space="preserve"><g><path d="M485.211,363.906c0,10.637-2.992,20.498-7.785,29.174L324.225,221.67l151.54-132.584
+                    c5.895,9.355,9.446,20.344,9.446,32.219V363.906z M242.606,252.793l210.863-184.5c-8.653-4.737-18.397-7.642-28.908-7.642H60.651
+                    c-10.524,0-20.271,2.905-28.889,7.642L242.606,252.793z M301.393,241.631l-48.809,42.734c-2.855,2.487-6.41,3.729-9.978,3.729
+                    c-3.57,0-7.125-1.242-9.98-3.729l-48.82-42.736L28.667,415.23c9.299,5.834,20.197,9.329,31.983,9.329h363.911
+                    c11.784,0,22.687-3.495,31.983-9.329L301.393,241.631z M9.448,89.085C3.554,98.44,0,109.429,0,121.305v242.602
+                    c0,10.637,2.978,20.498,7.789,29.174l153.183-171.44L9.448,89.085z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </svg>
+                     Напишите нам
+                </a>
             </div>
         </div>
     </div>
+    <div class="header-wrapper-push"></div>
+    <section class="header-section">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-wrap">
+                    <a href="{% url 'main' %}" class="logo-img-wrap">
+                        <img src="{% static 'rapir/images/logo.webp' %}">
+                    </a>
+                    <div class="name-company">
+                        <span>Центр Ориентир</span><br>
+                        Soft-skills
+                    </div>
+                </div>
+                <div class="header-contacts">
+                    <div class="header-adress">
+                        <?xml version="1.0" ?><svg enable-background="new 0 0 64 64" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Glyph_copy_2"><path d="M42.138,23.162c0-5.566-4.548-10.094-10.138-10.094s-10.138,4.528-10.138,10.094S26.41,33.256,32,33.256   S42.138,28.728,42.138,23.162z"/><path d="M31.995,63.996l4.109-5.375c4.289-5.678,18.282-25.024,18.282-35.601C54.387,9.253,45.391,0.004,32,0.004   S9.613,9.253,9.613,23.021c0,11.39,16.432,33.166,18.301,35.605L31.995,63.996z M17.862,23.162c0-7.771,6.342-14.094,14.138-14.094   s14.138,6.323,14.138,14.094S39.796,37.256,32,37.256S17.862,30.934,17.862,23.162z"/></g></svg>
+                        <div class="contacts-wrap">
+                            <span>г. Москва</span><br>
+                            Ленинский проспект, дом,<br> строение, номер кабинета
+                        </div>
+                    </div>
+                    <div class="header-phone">
+                        <?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="477.156px" height="477.156px" viewBox="0 0 477.156 477.156" style="enable-background:new 0 0 477.156 477.156;"xml:space="preserve"><g><path d="M475.009,380.316l-2.375-7.156c-5.625-16.719-24.062-34.156-41-38.75l-62.688-17.125c-17-4.625-41.25,1.594-53.688,14.031l-22.688,22.688c-82.453-22.28-147.109-86.938-169.359-169.375L145.9,161.94c12.438-12.438,18.656-36.656,14.031-53.656l-17.094-62.719c-4.625-16.969-22.094-35.406-38.781-40.969L96.9,2.19c-16.719-5.563-40.563,0.063-53,12.5L9.962,48.659C3.899,54.69,0.024,71.94,0.024,72.003c-1.187,107.75,41.063,211.562,117.281,287.781c76.031,76.031,179.454,118.219,286.891,117.313c0.562,0,18.312-3.813,24.375-9.845l33.938-33.938C474.946,420.878,480.571,397.035,475.009,380.316z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                        <div class="phone-wrap">
+                            <span><a class="phone" href="tel:+70000000000">+7 (000) 000-00-00</a></span><br>
+                            Звоните с 09:00 до 22:00 <br> (Бесплатно по России)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="push40 hidden-xs"></div>
+        </div>
+    </section>
     <div class="middle-section">
 		{% block content %}{% endblock %}
     </div>
