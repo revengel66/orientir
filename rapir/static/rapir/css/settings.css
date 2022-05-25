@@ -993,7 +993,7 @@ a.absolute{
     ::-webkit-scrollbar-thumb {
         -webkit-border-radius: 0px;
         border-radius: 0px;
-        background-color: #3381dd;
+        background-color: #FF5168;
     }
     ::-webkit-scrollbar-track {
         background-color: #2C2C2C;
